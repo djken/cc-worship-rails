@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container d-flex">
+    <div class="col-lg-8">
+        <h2>Groups</h2>
+        <% @groups.each do |g| %>
+
+        <div class="d-flex">
+            <div>Name : </div>
+            <div class="pl-2"><a href=""><%= g.name %></a></div>
+        </div>
+
+        <div class="d-flex">
+            <div>Location : </div>
+            <div class="pl-2"><%= g.location %></div>
+        </div>
+
+        <div class="d-flex">
+            <div>Information : </div>
+            <div class="pl-2"><%= g.info %></div>
+        </div>
+
+    <%= link_to 'Show', g %>
+    <%= link_to 'Edit', edit_group_path(g) %>
+    <%= link_to 'Destroy', g, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <hr>             
+    <% end %>
+    <%= link_to 'New Group', new_group_path %>
+    </div>
+</div>

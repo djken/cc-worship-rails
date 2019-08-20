@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container d-flex">
+    <div class="col-lg-8">
+        <h2>Genres</h2>
+        <% @genres.each do |g| %>
+
+        <div class="d-flex">
+            <div>Categories : </div>
+            <div class="pl-2"><a href=""><%= g.category %></a></div>
+        </div>
+
+
+    <%= link_to 'Show', g %>
+    <%= link_to 'Edit', edit_genre_path(g) %>
+    <%= link_to 'Destroy', g, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <hr>             
+    <% end %>
+    <%= link_to 'New Genre', new_genre_path %>
+    </div>
+</div>

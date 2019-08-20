@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container d-flex">
+    <div class="col-lg-8">
+        <h2>Albums</h2>
+        <% @albums.each do |a| %>
+
+        <div class="d-flex">
+            <div>Title : </div>
+            <div class="pl-2"><a href=""><%= a.title %></a></div>
+        </div>
+
+
+    <%= link_to 'Show', a %>
+    <%= link_to 'Edit', edit_album_path(a) %>
+    <%= link_to 'Destroy', a, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <hr>             
+    <% end %>
+    <%= link_to 'New Album', new_album_path %>
+    </div>
+</div>
